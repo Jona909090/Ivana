@@ -1,129 +1,58 @@
-const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
 const message = document.getElementById("message");
+const buttons = document.querySelector(".buttons");
 
-const successScreen = document.getElementById("successScreen");
-const sadScreen = document.getElementById("sadScreen");
-
-const popSound = document.getElementById("popSound");
-
-const texts = [
-"Čekaj malo... 😊",
-"Jesi sigurna? 🤔",
-"Ne žuri me, molim te 😅",
-"Još samo jednom probaj ❤️",
-"Nemoj tako... 🥺",
-"Skoro si me uhvatila 😂",
-"Hajde razmisli još malo 🤗",
-"Ne odustaješ? 🙈",
-"Poslednji pokušaj 😎",
-"Dobro... sad može 😭"
+const messages = [
+    "Čekaj malo... 😄",
+    "Jesi sigurna? 🤔",
+    "Ne juri me, molim te 😂",
+    "Još samo jednom probaj 😅",
+    "Nemoj tako... 🥺",
+    "Skoro si me uhvatila 😆",
+    "Hajde razmisli još malo 🤭",
+    "Ne odustaješ? 🙈",
+    "Poslednji pokušaj 😎",
+    "Dobro... sad može 😭"
 ];
 
 let tries = 0;
 
-function moveButton(){
+function moveButton() {
 
-    if(tries >= 10){
+    if (tries >= 10) {
+        message.innerHTML = "Dobro... sad možeš da klikneš 😅";
+        noBtn.removeEventListener("mouseover", moveButton);
+        noBtn.removeEventListener("click", moveButton);
+        noBtn.style.cursor = "pointer";
         return;
     }
 
-    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
-    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+    message.innerHTML = messages[tries];
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+    const maxX = buttons.offsetWidth - noBtn.offsetWidth;
+    const maxY = buttons.offsetHeight - noBtn.offsetHeight;
 
-    noBtn.style.position = "fixed";
+    const x = Math.floor(Math.random() * maxX);
+    const y = Math.floor(Math.random() * maxY);
+
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
-
-    message.innerHTML = texts[tries];
 
     tries++;
 }
 
 noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", moveButton);
 
-noBtn.addEventListener("click", function(){
+yesBtn.addEventListener("click", () => {
+    alert("❤️ Znao sam da ćeš reći DA! ❤️");
+});
 
-    if(tries >= 10){
+noBtn.addEventListener("click", () => {
 
-        document.querySelector(".container").style.display="none";
-
-        sadScreen.classList.remove("hidden");
-
+    if (tries >= 10) {
+        alert("😂 Dobro, uspela si da klikneš 'Ne'!");
     }
 
 });
-yesBtn.addEventListener("click", () => {
-
-    // Pusti zvuk šampanjca
-    if (popSound) {
-        popSound.currentTime = 0;
-        popSound.play().catch(() => {});
-    }
-
-    // Sakrij početni ekran
-    document.querySelector(".container").style.display = "none";
-
-    // Prikaži ekran "Jeeeeee!"
-    successScreen.classList.remove("hidden");
-
-    // Konfete
-    confetti({
-        particleCount: 250,
-        spread: 180,
-        origin: { y: 0.6 }
-    });
-
-    // Vatromet 5 sekundi
-    const duration = 5000;
-    const end = Date.now() + duration;
-
-    (function frame() {
-
-        confetti({
-            particleCount: 5,
-            angle: 60,
-            spread: 70,
-            origin: { x: 0 }
-        });
-
-        confetti({
-            particleCount: 5,
-            angle: 120,
-            spread: 70,
-            origin: { x: 1 }
-        });
-
-        if (Date.now() < end) {
-            requestAnimationFrame(frame);
-        }
-
-    })();
-// Padajuća srca
-
-function createHeart(){
-
-    const heart=document.createElement("div");
-
-    heart.className="heart";
-
-    heart.innerHTML="❤️";
-
-    heart.style.left=Math.random()*100+"vw";
-
-    heart.style.animationDuration=(4+Math.random()*4)+"s";
-
-    heart.style.fontSize=(20+Math.random()*30)+"px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },8000);
-
-}
-
-setInterval(createHeart,300);
