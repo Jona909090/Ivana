@@ -1,48 +1,168 @@
-const yes = document.getElementById("yes");
-const no = document.getElementById("no");
-const popup = document.getElementById("popup");
+const yesBtn = document.getElementById("yes");
+const noBtn = document.getElementById("no");
+
+const questionPage = document.getElementById("questionPage");
+const successPage = document.getElementById("successPage");
+const sadPage = document.getElementById("sadPage");
+
+const retry = document.getElementById("retry");
+const messageBox = document.getElementById("messageBox");
+const hearts = document.getElementById("hearts");
+const fireworks = document.getElementById("fireworks");
+
+let attempts = 0;
 
 const messages = [
-    "😅 Čekaj malo...",
-    "🤔 Jesi li sigurna?",
-    "🥺 Razmisli još jednom...",
-    "😄 Ne odustajem!",
-    "❤️ Ma hajde...",
-    "😂 Skoro si me uhvatila!",
-    "😊 Dobro, probaj opet!"
+
+"Čekaj malo... ☕",
+
+"Jesi sigurna? 🥺",
+
+"Ne žuri me... 😅",
+
+"Još samo jednom probaj. ❤️",
+
+"Nemoj tako... 😢",
+
+"Skoro si me uhvatila. 😂",
+
+"Hajde razmisli još malo. 🤔",
+
+"Ne odustaješ? 🙈",
+
+"Poslednji pokušaj. 😎",
+
+"Dobro... sad može. 🤷"
+
 ];
 
-let i = 0;
+function random(min,max){
 
-no.addEventListener("mouseover", () => {
-    const maxX = window.innerWidth - no.offsetWidth - 20;
-    const maxY = window.innerHeight - no.offsetHeight - 20;
+return Math.floor(Math.random()*(max-min))+min;
 
-    no.style.left = Math.random() * maxX + "px";
-    no.style.top = Math.random() * maxY + "px";
+}
 
-    if (i < messages.length) {
-        no.innerText = messages[i];
-        i++;
-    }
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=random(0,100)+"vw";
+
+heart.style.animationDuration=random(5,10)+"s";
+
+heart.style.fontSize=random(18,36)+"px";
+
+hearts.appendChild(heart);
+
+setTimeout(()=>heart.remove(),10000);
+
+}
+
+setInterval(createHeart,300);
+function moveButton(){
+
+const w=window.innerWidth-180;
+const h=window.innerHeight-120;
+
+const x=random(20,w);
+const y=random(20,h);
+
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+
+}
+
+noBtn.addEventListener("mouseenter",()=>{
+
+if(attempts<10){
+
+messageBox.innerHTML=messages[attempts];
+
+attempts++;
+
+moveButton();
+
+}
+
+else{
+
+questionPage.classList.remove("active");
+
+sadPage.classList.add("active");
+
+}
+
 });
 
-yes.addEventListener("click", () => {
-    popup.style.display = "flex";
-    popup.innerHTML = `
-        <div style="
-            background:white;
-            color:#333;
-            padding:40px;
-            border-radius:20px;
-            text-align:center;
-            max-width:500px;
-        ">
-            <h1>🥰 Jeeee!</h1>
-            <p style="font-size:24px;margin-top:20px;">
-                Znao sam da ćeš reći DA! ❤️<br><br>
-                Vidimo se večeras na kafi. ☕😊
-            </p>
-        </div>
-    `;
+noBtn.addEventListener("click",(e)=>{
+
+e.preventDefault();
+
+moveButton();
+
 });
+
+yesBtn.addEventListener("click",()=>{
+
+questionPage.classList.remove("active");
+
+successPage.classList.add("active");
+
+launchFireworks();
+
+});
+
+retry.addEventListener("click",()=>{
+
+attempts=0;
+
+messageBox.innerHTML="";
+
+sadPage.classList.remove("active");
+
+questionPage.classList.add("active");
+
+});
+function launchFireworks(){
+
+for(let i=0;i<35;i++){
+
+setTimeout(()=>{
+
+const boom=document.createElement("div");
+
+boom.className="firework";
+
+boom.style.left=random(10,90)+"vw";
+boom.style.top=random(10,80)+"vh";
+
+boom.style.setProperty("--x",(Math.random()-0.5)*300+"px");
+boom.style.setProperty("--y",(Math.random()-0.5)*300+"px");
+
+for(let j=0;j<24;j++){
+
+const p=document.createElement("span");
+
+const angle=(360/24)*j;
+const dist=150;
+
+p.style.setProperty("--x",Math.cos(angle*Math.PI/180)*dist+"px");
+p.style.setProperty("--y",Math.sin(angle*Math.PI/180)*dist+"px");
+
+boom.appendChild(p);
+
+}
+
+fireworks.appendChild(boom);
+
+setTimeout(()=>boom.remove(),1200);
+
+},i*180);
+
+}
+
+}
