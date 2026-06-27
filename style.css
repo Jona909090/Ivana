@@ -1,1 +1,184 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Patrick Hand', cursive;
+}
 
+body{
+    background:#050505;
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#3d0a2c,#090909 70%);
+    z-index:-2;
+}
+
+.background::after{
+    content:"❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    opacity:.08;
+    font-size:40px;
+    animation:floatHearts 12s linear infinite;
+}
+
+@keyframes floatHearts{
+    from{
+        transform:translateY(100%);
+    }
+    to{
+        transform:translateY(-120%);
+    }
+}
+
+.container{
+    width:820px;
+    max-width:90%;
+    background:rgba(0,0,0,.55);
+    border:2px solid #ff5da2;
+    border-radius:25px;
+    text-align:center;
+    padding:50px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 35px #ff4d94;
+}
+
+h1{
+    font-size:70px;
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:48px;
+    margin:35px 0;
+}
+
+h3{
+    color:#ff87b8;
+    font-size:30px;
+}
+.buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    position:relative;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    border-radius:18px;
+    font-size:28px;
+    padding:18px 45px;
+    transition:.25s;
+    color:white;
+}
+
+#yesBtn{
+    background:#29b64b;
+    box-shadow:0 0 20px #29b64b;
+}
+
+#yesBtn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 35px #29b64b;
+}
+
+#noBtn{
+    background:#d4143c;
+    box-shadow:0 0 20px #ff003c;
+    position:relative;
+}
+
+#message{
+    height:45px;
+    margin-top:20px;
+    color:#ff8fc1;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.hidden{
+    display:none;
+}
+
+#successScreen,
+#sadScreen{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+}
+
+.successBox,
+.sadBox{
+    width:900px;
+    max-width:90%;
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+}
+
+.successBox{
+    background:linear-gradient(#210018,#000);
+    border:2px solid hotpink;
+    box-shadow:0 0 40px hotpink;
+}
+
+.sadBox{
+    background:#111;
+    border:2px solid #666;
+}
+
+.successBox h1{
+    color:#ff62c2;
+    font-size:80px;
+}
+
+.successBox h2{
+    font-size:45px;
+}
+
+.successBox p{
+    font-size:34px;
+    margin:20px 0;
+}
+
+.sadBox img{
+    width:100%;
+    max-height:420px;
+    object-fit:cover;
+    border-radius:20px;
+    margin-bottom:25px;
+}
+
+.sadBox h1{
+    font-size:60px;
+}
+
+.sadBox p{
+    font-size:34px;
+    margin:25px 0;
+}
+
+.sadBox button{
+    background:#ff2f7b;
+    box-shadow:0 0 20px hotpink;
+}
