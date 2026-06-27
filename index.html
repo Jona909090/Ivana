@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitanje za Ivanu ❤️</title>
 
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <h1>Ivana...</h1>
+
+    <h3>Imam jedno malo pitanje za tebe 😊</h3>
+
+    <h2>
+        Da li bi htela da idemo<br>
+        na kafu večeras? ☕
+    </h2>
+
+    <div id="message"></div>
+
+    <div class="buttons">
+
+        <button id="yesBtn">
+            ❤️ Naravno 😊
+        </button>
+
+        <button id="noBtn">
+            Ne 😆
+        </button>
+
+    </div>
+
+</div>
+
+<!-- EKRAN KADA KLIKNE DA -->
+
+<div id="successScreen" class="hidden">
+
+    <div class="successBox">
+
+        <h1>💖 Jeeeeee! 💖</h1>
+
+        <h2>Baš si me obradovala! ❤️</h2>
+
+        <p>Vidimo se večeras na kafi. ☕</p>
+
+        <p>Samo pošalji kada i gde te kupim. 😉</p>
+
+        <h1>Stefan!!! ❤️</h1>
+
+    </div>
+
+</div>
+
+<!-- EKRAN KADA KLIKNE NE -->
+
+<div id="sadScreen" class="hidden">
+
+    <div class="sadBox">
+
+        <img src="images/sad.jpg" alt="Sad">
+
+        <h2>😢</h2>
+
+        <h1>Ok...</h1>
+
+        <p>Žao mi je što je tvoj odabir baš ovo. 💔</p>
+
+        <button onclick="location.reload()">
+            ❤️ Predomisli se ❤️
+        </button>
+
+    </div>
+
+</div>
+
+<audio id="popSound">
+    <source src="sounds/champagne.mp3" type="audio/mpeg">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
