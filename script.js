@@ -26,8 +26,10 @@ function moveButton() {
 
     tries++;
 yesBtn.style.transform = "scale(" + (1 + tries * 0.08) + ")";
+yesBtn.style.boxShadow = "0 0 30px #ff4f8b";
    message.innerHTML = "💬 " + texts[tries - 1];
 message.style.opacity = "1";
+  yesBtn.style.transition = "0.3s";
     const maxX = window.innerWidth - noBtn.offsetWidth - 50;
 const maxY = window.innerHeight - noBtn.offsetHeight - 50;
 
@@ -36,11 +38,13 @@ const y = 50 + Math.random() * (maxY - 50);
     noBtn.style.position = "fixed";
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
-}
-setTimeout(() => {
+noBtn.style.transform = "rotate(" + (Math.random() * 20 - 10) + "deg)";
+   setTimeout(() => {
     message.style.opacity = "0";
 }, 1500);
+  } 
 noBtn.addEventListener("mouseenter", moveButton);
+
 
 yesBtn.addEventListener("click", () => {
 
@@ -51,16 +55,16 @@ yesBtn.addEventListener("click", () => {
         justify-content:center;
         align-items:center;
         flex-direction:column;
-        background:#ffd6e8;
+        background:linear-gradient(135deg,#ffe6f0,#ffc9dd,#ffdff0);
         text-align:center;
-        font-family:Arial">
+        font-family:'Segoe UI',sans-serif
 
-        <h1 style="font-size:55px;color:#ff2d75;">
-        🎉 JEEEEEE! 🎉
+        <h1 style="font-size:60px;color:#ff2d75;">
+        🎉☕ Jeeee! ☕🎉
         </h1>
 
         <h2>
-        Vidimo se večeras na kafi. ❤️
+        Vidimo se večeras na kafi.☕❤️
         </h2>
 
         <h3>
