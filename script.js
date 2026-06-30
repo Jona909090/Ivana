@@ -1,7 +1,7 @@
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const message = document.getElementById("message");
-
+const bubble = document.getElementById("bubble");
 let tries = 0;
 
 const texts = [
@@ -28,6 +28,8 @@ function moveButton() {
 yesBtn.style.transform = "scale(" + (1 + tries * 0.08) + ")";
 yesBtn.style.boxShadow = "0 0 30px #ff4f8b";
    message.innerHTML = "💬 " + texts[tries - 1];
+   bubble.innerHTML = texts[tries - 1];
+bubble.style.opacity = "1";
 message.style.opacity = "1";
   yesBtn.style.transition = "all 0.35s ease";
 yesBtn.style.background = "#ff2d75";
@@ -41,10 +43,13 @@ const x = currentX + (Math.random() * 300 - 150);
 const y = currentY + (Math.random() * 250 - 125);
 noBtn.style.left = Math.max(20, Math.min(maxX, x)) + "px";
    noBtn.style.top = Math.max(20, Math.min(maxY, y)) + "px";
+   bubble.style.left = (parseInt(noBtn.style.left) - 10) + "px";
+bubble.style.top = (parseInt(noBtn.style.top) - 55) + "px";
 noBtn.style.transition = "left 0.25s ease, top 0.25s ease, transform 0.25s ease";
 noBtn.style.transform = "rotate(" + (Math.random() * 20 - 10) + "deg)";
    setTimeout(() => {
     message.style.opacity = "0";
+      bubble.style.opacity = "0";
       noBtn.style.cursor = "pointer";
 }, 1500);
   } 
