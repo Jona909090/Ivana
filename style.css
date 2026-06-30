@@ -89,7 +89,9 @@ box-shadow:0 8px 20px rgba(0,0,0,.15);
 transition:.4s;
 }
 .container{
-    animation: fadeIn 0.8s ease;
+    animation:
+    fadeIn 0.8s ease,
+    floatCard 4s ease-in-out infinite;
 }
 
 @keyframes fadeIn{
@@ -101,5 +103,16 @@ transition:.4s;
     100%{
         opacity:1;
         transform:scale(1) translateY(0);
+    }
+}
+@keyframes floatCard{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+    100%{
+        transform:translateY(0px);
     }
 }
