@@ -64,7 +64,7 @@ box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 #yesBtn:hover{
-    transform:scale(1.1);  
+    transform:scale(1.1);} 
 #yesBtn:active{
     transform:scale(.96);
 }
@@ -74,7 +74,8 @@ box-shadow:0 8px 20px rgba(0,0,0,.15);
     position:absolute;
     right:0;
     top:0;
-}#noBtn:hover{
+}
+#noBtn:hover{
     background:#dcdcdc;
 }
 
