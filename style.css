@@ -52,9 +52,10 @@ button{
     border:none;
     border-radius:40px;
     cursor:pointer;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
     font-size:22px;
     font-weight:bold;
-    transition:.3s;
+    transition: .35s ease;
 }
 
 #yesBtn{
@@ -63,15 +64,18 @@ button{
 }
 
 #yesBtn:hover{
-    transform:scale(1.1);
+    transform:scale(1.1);  
+#yesBtn:active{
+    transform:scale(.96);
 }
-
 #noBtn{
     background:#e5e5e5;
     color:#333;
     position:absolute;
     right:0;
     top:0;
+}#noBtn:hover{
+    background:#dcdcdc;
 }
 
 #message{
@@ -80,4 +84,19 @@ button{
     color:#ff2d75;
     font-weight:bold;
     min-height:40px;
+}
+.container{
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+        transform:scale(0.85) translateY(30px);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
 }
