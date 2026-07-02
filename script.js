@@ -93,81 +93,14 @@ noBtn.addEventListener("mouseenter", moveButton);
 
 
 yesBtn.addEventListener("click", () => {
-
     document.body.innerHTML = `
-    <canvas id="confetti" style="
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-z-index:9999;
-"></canvas>
-        <div style="
-        height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        flex-direction:column;
-        background:linear-gradient(135deg,#ffe6f0,#ffc9dd,#ffdff0);
-        text-align:center;
-        font-family:'Segoe UI',sans-serif
-
-        <h1 style="font-size:60px;color:#ff2d75;">
-       🥳 JEEEEEE! 🥳
-        </h1>
-
-        <h2>
-        Vidimo se večeras na kafi. ☕❤️
-        </h2>
-
-        <h3>
-        Samo mi pošalji kada i gde da dođem.
-        </h3>
-
-        <br>
-
-        <h2>Stefan ❤️</h2>
-
-        </div>
+        <img src="jeeeeee.jpg" style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        ">
     `;
 });
-const canvas = document.getElementById("confetti");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const pieces = [];
-
-for (let i = 0; i < 200; i++) {
-    pieces.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height - canvas.height,
-        r: Math.random() * 8 + 4,
-        d: Math.random() * 200,
-        color: `hsl(${Math.random() * 360},100%,50%)`
-    });
-}
-function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    pieces.forEach(p => {
-        ctx.fillStyle = p.color;
-        ctx.fillRect(p.x, p.y, p.r, p.r);
-
-        p.y += 3;
-        p.x += Math.sin(p.d) * 2;
-        p.d += 0.05;
-
-        if (p.y > canvas.height) {
-            p.y = -20;
-            p.x = Math.random() * canvas.width;
-        }
-    });
-
-    requestAnimationFrame(draw);
-}
-
-draw();
