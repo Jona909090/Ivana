@@ -106,6 +106,8 @@ document.body.innerHTML = `
     align-items:center;
 ">
 
+  <div style="position:relative; display:inline-block;">
+
     <img src="jeeeeee.jpg" style="
         max-width:90%;
         max-height:90%;
@@ -114,5 +116,54 @@ document.body.innerHTML = `
         box-shadow:0 0 40px rgba(0,0,0,.5);
     ">
 
+    <div style="
+        position:absolute;
+        inset:0;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+        color:white;
+        padding:30px;
+    ">
+
+        <h1 style="
+            font-size:72px;
+            margin:0;
+            color:#ffd700;
+            text-shadow:3px 3px 10px rgba(0,0,0,.8);
+        ">
+            🎉 JEEEEE! 🎉
+        </h1>
+
+        <p style="
+            font-size:34px;
+            margin-top:30px;
+            font-weight:bold;
+            text-shadow:2px 2px 8px rgba(0,0,0,.8);
+        ">
+            Vidimo se večeras na kafi. ☕❤️
+        </p>
+
+        <p style="
+            font-size:24px;
+            margin-top:15px;
+            text-shadow:2px 2px 8px rgba(0,0,0,.8);
+        ">
+            Samo mi pošalji kada i gde da dođem.
+        </p>
+
+        <div style="
+            margin-top:50px;
+            font-size:46px;
+            font-family:'Brush Script MT', cursive;
+            color:#ffccd5;
+            text-shadow:2px 2px 8px rgba(0,0,0,.8);
+        ">
+            Stefan ❤️
+        </div>
+
+    </div>
+
 </div>
-`;
