@@ -7,6 +7,9 @@
 
 body{
     background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("slike/pozadina.jpg");
+    background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
    min-height:100vh;
     display:flex;
     justify-content:center;
