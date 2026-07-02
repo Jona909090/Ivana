@@ -2,31 +2,32 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
 }
 
 body{
-    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("pozadina.jpg");
-    background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-   min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url("pozadina.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    overflow:hidden; 
+    overflow:hidden;
 }
 
 .container{
     width:95%;
     max-width:750px;
-    background:white;
+    background:#fff;
     border-radius:35px;
     padding:45px;
     position:relative;
     text-align:center;
     box-shadow:0 25px 60px rgba(255,105,180,.25);
-}  
+    animation:fadeIn .8s ease,floatCard 4s ease-in-out infinite;
+}
 
 .bear{
     width:220px;
@@ -35,14 +36,14 @@ background-repeat: no-repeat;
 
 h1{
     color:#ff2d75;
-    margin-bottom:15px;
     font-size:42px;
+    margin-bottom:15px;
 }
 
 .text{
     font-size:26px;
-    margin-bottom:45px;
     color:#444;
+    margin-bottom:45px;
 }
 
 .buttons{
@@ -55,32 +56,28 @@ button{
     height:65px;
     border:none;
     border-radius:40px;
-    cursor:pointer;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
     font-size:22px;
     font-weight:bold;
-    transition: .35s ease;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 #yesBtn{
     background:#ff4f8b;
-    color:white;
+    color:#fff;
 }
 
 #yesBtn:hover{
-    transform:scale(1.1);} 
-#yesBtn:active{
-    transform:scale(.96);
+    transform:scale(1.08);
 }
+
 #noBtn{
-    background:#e5e5e5;
-    color:#333;
     position:absolute;
     right:0;
     top:0;
-}
-#noBtn:hover{
-    background:#dcdcdc;
+    background:#e5e5e5;
+    color:#333;
 }
 
 #message{
@@ -90,39 +87,12 @@ box-shadow:0 8px 20px rgba(0,0,0,.15);
     font-weight:bold;
     min-height:40px;
     opacity:0;
-transition:.4s;
-}
-.container{
-    animation:
-    fadeIn 0.8s ease,
-    floatCard 4s ease-in-out infinite;
+    transition:.35s;
 }
 
-@keyframes fadeIn{
-    0%{
-        opacity:0;
-        transform:scale(0.85) translateY(30px);
-    }
-
-    100%{
-        opacity:1;
-        transform:scale(1) translateY(0);
-    }
-}
-@keyframes floatCard{
-    0%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
-    100%{
-        transform:translateY(0px);
-    }
-}
 #bubble{
     position:fixed;
-    background:white;
+    background:#fff;
     color:#ff2d75;
     padding:10px 18px;
     border-radius:20px;
@@ -130,10 +100,8 @@ transition:.4s;
     font-weight:bold;
     box-shadow:0 10px 25px rgba(0,0,0,.15);
     pointer-events:none;
-
     opacity:0;
-
-    transition:.25s ease;
+    transition:.25s;
     z-index:999;
 }
 
@@ -142,8 +110,32 @@ transition:.4s;
     position:absolute;
     bottom:-8px;
     left:30px;
-
     border-left:8px solid transparent;
     border-right:8px solid transparent;
-    border-top:8px solid white;
+    border-top:8px solid #fff;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:scale(.85) translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+@keyframes floatCard{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
+}
+
+@keyframes shake{
+    0%{transform:translateX(0);}
+    25%{transform:translateX(-4px);}
+    50%{transform:translateX(4px);}
+    75%{transform:translateX(-4px);}
+    100%{transform:translateX(0);}
 }
