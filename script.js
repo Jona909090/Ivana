@@ -93,17 +93,26 @@ noBtn.addEventListener("mouseenter", moveButton);
 
 
 yesBtn.addEventListener("click", () => {
- document.body.innerHTML = `
+document.body.innerHTML = `
 <div style="
     position:fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background:url('jeeeeee.jpg') center center; 
-    background-size:cover;
-    background-repeat:no-repeat;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 ">
+
+    <img src="jeeeeee.jpg" style="
+        max-width:90%;
+        max-height:90%;
+        object-fit:contain;
+        border-radius:20px;
+        box-shadow:0 0 40px rgba(0,0,0,.5);
+    ">
+
 </div>
 `;
-});
