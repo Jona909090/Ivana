@@ -106,5 +106,4 @@ yesBtn.addEventListener("click", () => {
 ">
 </div>
 `;
-    `;
 });
