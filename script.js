@@ -71,15 +71,14 @@ message.style.opacity = "1";
   yesBtn.style.transition = "all 0.35s ease";
 yesBtn.style.background = "#ff2d75";
 yesBtn.style.color = "white";
-    const maxX = window.innerWidth - noBtn.offsetWidth - 50;
-const maxY = window.innerHeight - noBtn.offsetHeight - 50;
+ const maxX = 350;
+const maxY = 80;
 
-  const currentX = noBtn.offsetLeft;
-const currentY = noBtn.offsetTop;
 const x = Math.random() * maxX;
 const y = Math.random() * maxY;
-noBtn.style.left = Math.max(20, Math.min(maxX, x)) + "px";
-   noBtn.style.top = Math.max(20, Math.min(maxY, y)) + "px";
+
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
    bubble.style.left = (parseInt(noBtn.style.left) - 10) + "px";
 bubble.style.top = (parseInt(noBtn.style.top) - 55) + "px";
 noBtn.style.transition = "left 0.25s ease, top 0.25s ease, transform 0.25s ease";
