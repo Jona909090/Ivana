@@ -42,7 +42,7 @@ setTimeout(() => {
             😢
         </h1>
 
-        <h2 style="font-size:42px;margin-top:20px;">
+        <h2 style="font-size:42px;margin-top:20px;"> 
             Šteta...
         </h2>
 
