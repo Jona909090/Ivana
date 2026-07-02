@@ -100,7 +100,7 @@ yesBtn.addEventListener("click", () => {
     left:0;
     width:100%;
     height:100%;
-    background:url('jeeeeee.jpg') center center;
+    background:url('jeeeeee.jpg') center center; 
     background-size:cover;
     background-repeat:no-repeat;
 ">
