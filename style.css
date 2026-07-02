@@ -23,6 +23,7 @@ background-repeat: no-repeat;
     background:white;
     border-radius:35px;
     padding:45px;
+    position:relative;
     text-align:center;
     box-shadow:0 25px 60px rgba(255,105,180,.25);
 } 
