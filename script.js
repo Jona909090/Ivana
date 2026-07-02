@@ -34,7 +34,7 @@ setTimeout(() => {
         align-items:center;
         flex-direction:column;
         background:url('pozadina.jpg') center/cover no-repeat;
-        text-align:center;
+        text-align:center; 
         color:white;
         padding:20px;
     ">
