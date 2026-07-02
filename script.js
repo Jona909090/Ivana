@@ -43,8 +43,8 @@ const maxY = window.innerHeight - noBtn.offsetHeight - 50;
 
   const currentX = noBtn.offsetLeft;
 const currentY = noBtn.offsetTop;
-const x = currentX + (Math.random() * 300 - 150);
-const y = currentY + (Math.random() * 250 - 125);
+const x = Math.random() * maxX;
+const y = Math.random() * maxY;
 noBtn.style.left = Math.max(20, Math.min(maxX, x)) + "px";
    noBtn.style.top = Math.max(20, Math.min(maxY, y)) + "px";
    bubble.style.left = (parseInt(noBtn.style.left) - 10) + "px";
