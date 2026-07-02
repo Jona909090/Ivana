@@ -2,6 +2,7 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const message = document.getElementById("message");
 const bubble = document.getElementById("bubble");
+const container = document.getElementById("container");
 let tries = 0;
 
 const texts = [
