@@ -11,7 +11,7 @@ const texts = [
 "Kafa je sladja u dvoje. ☕",
 "Molim te... 😄",
 "Možda ipak 'Naravno'? 😉",
-"Hajde, razmisli još jednom.",
+"Hajde, razmisli još jednom.", 
 "Biće zabavno. 😊",
 "Skoro si me uhvatila!",
 "Još samo jednom probaj. 😅",
