@@ -93,6 +93,7 @@ noBtn.addEventListener("mouseenter", moveButton);
 
 
 yesBtn.addEventListener("click", () => {
+
 document.body.innerHTML = `
 <div style="
     position:fixed;
@@ -106,64 +107,78 @@ document.body.innerHTML = `
     align-items:center;
 ">
 
-  <div style="position:relative; display:inline-block;">
-
-    <img src="jeeeeee.jpg" style="
-        max-width:90%;
-        max-height:90%;
-        object-fit:contain;
-        border-radius:20px;
-        box-shadow:0 0 40px rgba(0,0,0,.5);
-    ">
-
     <div style="
-        position:absolute;
-        inset:0;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        text-align:center;
-        color:white;
-        padding:30px;
+        position:relative;
+        display:inline-block;
+        max-width:90vw;
+        max-height:90vh;
     ">
 
-        <h1 style="
-            font-size:72px;
-            margin:0;
-            color:#ffd700;
-            text-shadow:3px 3px 10px rgba(0,0,0,.8);
+        <img src="jeeeeee.jpg" style="
+            width:100%;
+            height:auto;
+            max-height:90vh;
+            display:block;
+            border-radius:20px;
+            box-shadow:0 0 40px rgba(0,0,0,.5);
         ">
-            🎉 JEEEEE! 🎉
-        </h1>
-
-        <p style="
-            font-size:34px;
-            margin-top:30px;
-            font-weight:bold;
-            text-shadow:2px 2px 8px rgba(0,0,0,.8);
-        ">
-            Vidimo se večeras na kafi. ☕❤️
-        </p>
-
-        <p style="
-            font-size:24px;
-            margin-top:15px;
-            text-shadow:2px 2px 8px rgba(0,0,0,.8);
-        ">
-            Samo mi pošalji kada i gde da dođem.
-        </p>
 
         <div style="
-            margin-top:50px;
-            font-size:46px;
-            font-family:'Brush Script MT', cursive;
-            color:#ffccd5;
-            text-shadow:2px 2px 8px rgba(0,0,0,.8);
+            position:absolute;
+            inset:0;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            padding:40px;
         ">
-            Stefan ❤️
+
+            <h1 style="
+                font-size:72px;
+                margin:0;
+                font-family:Arial,sans-serif;
+                font-weight:bold;
+                color:#ffffff;
+                text-shadow:0 0 15px rgba(0,0,0,.8);
+            ">
+                🎉 JEEEEE! 🎉
+            </h1>
+
+            <div style="
+                margin-top:30px;
+                font-size:48px;
+                font-family:Arial,sans-serif;
+                font-weight:bold;
+                text-shadow:0 0 12px rgba(0,0,0,.8);
+            ">
+                Vidimo se večeras na kafi. ☕❤️
+            </div>
+
+            <div style="
+                margin-top:20px;
+                font-size:28px;
+                font-family:Arial,sans-serif;
+                text-shadow:0 0 10px rgba(0,0,0,.8);
+            ">
+                Samo mi pošalji kada i gde da dođem.
+            </div>
+
+            <div style="
+                margin-top:55px;
+                font-size:72px;
+                font-family:'Brush Script MT',cursive;
+                color:white;
+                text-shadow:0 0 12px rgba(0,0,0,.8);
+            ">
+                Stefan ❤️
+            </div>
+
         </div>
 
     </div>
 
 </div>
+`;
+});
