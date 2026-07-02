@@ -23,11 +23,43 @@ noBtn.style.animation = "shake .18s";
 setTimeout(() => { 
     noBtn.style.animation = "";
 },180);
-    if (tries >= 10) {
-       noBtn.innerHTML = "Ne 😅";
-        return;
-    }
+ if (tries >= 10) {
 
+    document.body.innerHTML = `
+    <div style="
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        background:url('pozadina.jpg') center/cover no-repeat;
+        text-align:center;
+        color:white;
+        padding:20px;
+    ">
+
+        <h1 style="font-size:60px;">
+            😢
+        </h1>
+
+        <h2 style="font-size:42px;margin-top:20px;">
+            Šteta...
+        </h2>
+
+        <h3 style="font-size:28px;margin-top:15px;">
+            Poštujem tvoj izbor.
+        </h3>
+
+        <p style="font-size:22px;margin-top:20px;">
+            Ako se nekad predomisliš...
+            kafa će i dalje čekati. ☕
+        </p>
+
+    </div>
+    `;
+
+    return;
+}
     tries++;
 yesBtn.style.transform = "scale(" + (1 + tries * 0.08) + ")"; 
 yesBtn.style.boxShadow = "0 0 30px #ff4f8b";
