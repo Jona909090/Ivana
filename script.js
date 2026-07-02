@@ -20,7 +20,7 @@ const texts = [
 function moveButton() {
 noBtn.style.animation = "shake .18s";
 
-setTimeout(() => {
+setTimeout(() => { 
     noBtn.style.animation = "";
 },180);
     if (tries >= 10) {
