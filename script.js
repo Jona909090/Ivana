@@ -29,7 +29,7 @@ setTimeout(() => {
     }
 
     tries++;
-yesBtn.style.transform = "scale(" + (1 + tries * 0.08) + ")";
+yesBtn.style.transform = "scale(" + (1 + tries * 0.08) + ")"; 
 yesBtn.style.boxShadow = "0 0 30px #ff4f8b";
    message.innerHTML = "💬 " + texts[tries - 1];
    bubble.innerHTML = texts[tries - 1];
