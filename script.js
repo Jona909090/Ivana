@@ -19,7 +19,7 @@ const texts = [
 ];
 
 function moveButton() {
-noBtn.style.animation = "shake .18s";
+noBtn.style.animation = "shake .18s"; 
 
 setTimeout(() => { 
     noBtn.style.animation = "";
