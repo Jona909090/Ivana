@@ -71,8 +71,8 @@ message.style.opacity = "1";
   yesBtn.style.transition = "all 0.35s ease";
 yesBtn.style.background = "#ff2d75";
 yesBtn.style.color = "white";
- const maxX = 350;
-const maxY = 80;
+const maxX = container.clientWidth - noBtn.offsetWidth;
+const maxY = container.clientHeight - noBtn.offsetHeight;
 
 const x = Math.random() * maxX;
 const y = Math.random() * maxY;
